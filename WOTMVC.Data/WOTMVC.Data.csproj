@@ -70,7 +70,12 @@
     <Compile Include="Migrations\202106291459043_CharacterObjectAddedAndToIdentityModelsAsWell.Designer.cs">
       <DependentUpon>202106291459043_CharacterObjectAddedAndToIdentityModelsAsWell.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106291517156_NationObjectAddedAndToIdentityModelsAsWell.cs" />
+    <Compile Include="Migrations\202106291517156_NationObjectAddedAndToIdentityModelsAsWell.Designer.cs">
+      <DependentUpon>202106291517156_NationObjectAddedAndToIdentityModelsAsWell.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Nation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -86,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106291459043_CharacterObjectAddedAndToIdentityModelsAsWell.resx">
       <DependentUpon>202106291459043_CharacterObjectAddedAndToIdentityModelsAsWell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106291517156_NationObjectAddedAndToIdentityModelsAsWell.resx">
+      <DependentUpon>202106291517156_NationObjectAddedAndToIdentityModelsAsWell.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

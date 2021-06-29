@@ -66,6 +66,10 @@
     <Compile Include="CharacterMods\CharacterDetail.cs" />
     <Compile Include="CharacterMods\CharacterEdit.cs" />
     <Compile Include="CharacterMods\CharacterListItem.cs" />
+    <Compile Include="NationMods\NationCreate.cs" />
+    <Compile Include="NationMods\NationDetail.cs" />
+    <Compile Include="NationMods\NationEdit.cs" />
+    <Compile Include="NationMods\NationListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

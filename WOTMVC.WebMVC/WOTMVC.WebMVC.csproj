@@ -173,6 +173,7 @@
     <Compile Include="Controllers\CharacterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\NationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -243,6 +244,8 @@
     <Content Include="Views\Chapter\Create.cshtml" />
     <Content Include="Views\Character\Index.cshtml" />
     <Content Include="Views\Character\Create.cshtml" />
+    <Content Include="Views\Nation\Create.cshtml" />
+    <Content Include="Views\Nation\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
