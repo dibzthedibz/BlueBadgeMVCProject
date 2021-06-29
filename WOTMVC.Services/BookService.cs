@@ -46,5 +46,18 @@ namespace WOTMVC.Services
                 return query.ToArray();
             }
         }
+        public BookDetail GetBookById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Books.Single(e => e.BookId == id && e.OwnerId == _userId);
+                return new BookDetail
+                {
+                    BookId = entity.BookId,
+                    Title = entity.Title,
+                    PageCount = entity.PageCount
+                };
+            }
+        }
     }
 }
