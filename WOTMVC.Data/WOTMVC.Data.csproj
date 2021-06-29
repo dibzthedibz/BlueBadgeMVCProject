@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="Book.cs" />
     <Compile Include="Chapter.cs" />
+    <Compile Include="Character.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\202106291324038_FirstObjectBook.cs" />
     <Compile Include="Migrations\202106291324038_FirstObjectBook.Designer.cs">
@@ -64,6 +65,10 @@
     <Compile Include="Migrations\202106291421421_ChapterObjectAdded.cs" />
     <Compile Include="Migrations\202106291421421_ChapterObjectAdded.Designer.cs">
       <DependentUpon>202106291421421_ChapterObjectAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106291459043_CharacterObjectAddedAndToIdentityModelsAsWell.cs" />
+    <Compile Include="Migrations\202106291459043_CharacterObjectAddedAndToIdentityModelsAsWell.Designer.cs">
+      <DependentUpon>202106291459043_CharacterObjectAddedAndToIdentityModelsAsWell.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106291421421_ChapterObjectAdded.resx">
       <DependentUpon>202106291421421_ChapterObjectAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106291459043_CharacterObjectAddedAndToIdentityModelsAsWell.resx">
+      <DependentUpon>202106291459043_CharacterObjectAddedAndToIdentityModelsAsWell.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

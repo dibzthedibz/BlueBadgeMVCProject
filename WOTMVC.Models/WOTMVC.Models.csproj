@@ -62,6 +62,10 @@
     <Compile Include="ChapterMods\ChapterDetail.cs" />
     <Compile Include="ChapterMods\ChapterEdit.cs" />
     <Compile Include="ChapterMods\ChapterListItem.cs" />
+    <Compile Include="CharacterMods\CharacterCreate.cs" />
+    <Compile Include="CharacterMods\CharacterDetail.cs" />
+    <Compile Include="CharacterMods\CharacterEdit.cs" />
+    <Compile Include="CharacterMods\CharacterListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
