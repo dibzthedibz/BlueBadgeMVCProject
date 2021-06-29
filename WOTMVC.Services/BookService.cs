@@ -59,5 +59,21 @@ namespace WOTMVC.Services
                 };
             }
         }
+        public bool UpdateBook(BookEdit book)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Books
+                        .Single(e => e.BookId == book.BookId && e.OwnerId == _userId);
+                entity.Title = book.Title;
+                entity.Title = book.Title;
+                entity.PageCount = book.PageCount;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
     }
 }

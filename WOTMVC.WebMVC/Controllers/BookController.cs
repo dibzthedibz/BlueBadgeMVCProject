@@ -35,7 +35,7 @@ namespace WOTMVC.WebMVC.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             };
-           
+
             var service = CreateBookService();
 
             if (service.CreateBook(model))
@@ -56,6 +56,42 @@ namespace WOTMVC.WebMVC.Controllers
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new BookService(userId);
             return service;
+        }
+        //Get: Book/Edit
+        public ActionResult Edit(int id)
+        {
+            var service = CreateBookService();
+            var detail = service.GetBookById(id);
+            var model = new BookEdit
+            {
+                BookId = detail.BookId,
+                Title = detail.Title,
+                PageCount = detail.PageCount
+            };
+            return View(model);
+        }
+        //Post: Book/Edit
+        [HttpPost, ActionName("Edit")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, BookEdit book)
+        {
+            if (!ModelState.IsValid) 
+                return View(book);
+
+            //if (book.BookId != id)
+            //{
+            //    ModelState.AddModelError("", "Id Mismatch");
+            //    return View(book);
+            //}
+
+            var service = CreateBookService();
+            if (service.UpdateBook(book))
+            {
+                //TempData["SaveResult"] = "Book Successfully Updated.";
+                return RedirectToAction("Index");
+            }
+
+            return View(book);
         }
     }
 }
