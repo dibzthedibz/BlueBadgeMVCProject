@@ -58,6 +58,10 @@
     <Compile Include="BookMods\BookDetail.cs" />
     <Compile Include="BookMods\BookEdit.cs" />
     <Compile Include="BookMods\BookListItem.cs" />
+    <Compile Include="ChapterMods\ChapterCreate.cs" />
+    <Compile Include="ChapterMods\ChapterDetail.cs" />
+    <Compile Include="ChapterMods\ChapterEdit.cs" />
+    <Compile Include="ChapterMods\ChapterListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
