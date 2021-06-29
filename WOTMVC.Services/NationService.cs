@@ -51,5 +51,49 @@ namespace WOTMVC.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+        public NationDetail GetNationById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Nations.Single(e => e.NationId == id && e.OwnerId == _userId);
+                return new NationDetail
+                {
+                    NationId = entity.NationId,
+                    NationName = entity.NationName,
+                    Terrain = entity.Terrain,
+                    Trades = entity.Trades
+                };
+            }
+        }
+        public bool UpdateNation(NationEdit nation)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Nations
+                        .Single(e => e.NationId == nation.NationId && e.OwnerId == _userId);
+                entity.NationName = nation.NationName;
+                entity.Terrain = nation.Terrain;
+                entity.Trades = nation.Trades;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+        public bool DeleteNation(int nationId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Nations
+                        .Single(e => e.NationId == nationId && e.OwnerId == _userId);
+
+                ctx.Nations.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
     }
 }

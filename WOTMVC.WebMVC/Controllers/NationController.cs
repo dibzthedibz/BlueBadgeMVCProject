@@ -50,5 +50,72 @@ namespace WOTMVC.WebMVC.Controllers
             var service = new NationService(userId);
             return service;
         }
+        //Get: Nation/Details/{id
+        public ActionResult Details(int id)
+        {
+            var svc = CreateNationService();
+            var model = svc.GetNationById(id);
+
+            return View(model);
+        }
+
+        //Get: Nation/Edit
+        public ActionResult Edit(int id)
+        {
+            var service = CreateNationService();
+            var detail = service.GetNationById(id);
+            var model = new NationEdit
+            {
+                NationId = detail.NationId,
+                NationName = detail.NationName,
+                Terrain = detail.Terrain,
+                Trades = detail.Trades
+            };
+            return View(model);
+        }
+        //Post: Nation/Edit
+        [HttpPost, ActionName("Edit")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, NationEdit nation)
+        {
+            if (!ModelState.IsValid)
+                return View(nation);
+
+            //if (nation.NationId != id)
+            //{
+            //    ModelState.AddModelError("", "Id Mismatch");
+            //    return View(nation);
+            //}
+
+            var service = CreateNationService();
+            if (service.UpdateNation(nation))
+            {
+                //TempData["SaveResult"] = "Nation Successfully Updated.";
+                return RedirectToAction("Index");
+            }
+
+            return View(nation);
+        }
+        //Get: Nation/Delete
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateNationService();
+            var model = svc.GetNationById(id);
+
+            return View(model);
+        }
+        //Post: Product/Delete/{id}
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteChap(int id)
+        {
+            var service = CreateNationService();
+
+            service.DeleteNation(id);
+
+            //TempData["SaveResult"] = "Nation Successfully Deleted";
+
+            return RedirectToAction("Index");
+        }
     }
 }

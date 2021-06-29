@@ -255,6 +255,9 @@
     <Content Include="Views\Character\Details.cshtml" />
     <Content Include="Views\Character\Edit.cshtml" />
     <Content Include="Views\Character\Delete.cshtml" />
+    <Content Include="Views\Nation\Details.cshtml" />
+    <Content Include="Views\Nation\Edit.cshtml" />
+    <Content Include="Views\Nation\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
