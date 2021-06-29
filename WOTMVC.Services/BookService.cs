@@ -74,6 +74,19 @@ namespace WOTMVC.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+        public bool DeleteBook(int bookId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Books
+                        .Single(e => e.BookId == bookId && e.OwnerId == _userId);
 
+                ctx.Books.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

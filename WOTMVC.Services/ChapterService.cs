@@ -22,7 +22,6 @@ namespace WOTMVC.Services
             var entity = new Chapter()
             {
                 OwnerId = _userId,
-                BookId = model.BookId,
                 ChapNum = model.ChapNum,
                 ChapTitle = model.ChapTitle,
                 PageCount = model.PageCount,
@@ -46,10 +45,52 @@ namespace WOTMVC.Services
                             ChapNum = e.ChapNum,
                             ChapTitle = e.ChapTitle,
                             PageCount = e.PageCount
-                            //BookId = e.BookId,
                         }
                     );
                 return query.ToArray();
+            }
+        }
+        public ChapterDetail GetChapterById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Chapters.Single(e => e.ChapterId == id && e.OwnerId == _userId);
+                return new ChapterDetail
+                {
+                    ChapterId = entity.ChapterId,
+                    ChapNum = entity.ChapNum,
+                    ChapTitle = entity.ChapTitle,
+                    PageCount = entity.PageCount
+                };
+            }
+        }
+        public bool UpdateChapter(ChapterEdit chapter)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Chapters
+                        .Single(e => e.ChapterId == chapter.ChapterId && e.OwnerId == _userId);
+                entity.ChapNum = chapter.ChapNum;
+                entity.ChapTitle = chapter.ChapTitle;
+                entity.PageCount = chapter.PageCount;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+        public bool DeleteChapter(int chapterId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Chapters
+                        .Single(e => e.ChapterId == chapterId && e.OwnerId == _userId);
+
+                ctx.Chapters.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }

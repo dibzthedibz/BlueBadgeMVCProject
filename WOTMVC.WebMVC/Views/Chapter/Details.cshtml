@@ -1,0 +1,74 @@
+﻿@model WOTMVC.Models.ChapterMods.ChapterDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ChapterDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ChapterId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChapterId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChapNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChapNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChapTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChapTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PageCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PageCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BookId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NationId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NationId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CharacterId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CharacterId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ChapterId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -9,16 +9,14 @@ namespace WOTMVC.Models.ChapterMods
 {
     public class ChapterCreate
     {
-        [Required]
+
+        [Display(Name = "Chapter Number")]
         public int ChapNum { get; set; }
 
-        [Required]
+        [Display(Name = "Title of Chapter")]
         public string ChapTitle { get; set; }
 
-        [Required]
+        [Display(Name = "Length of Chapter")]
         public int PageCount { get; set; }
-
-        public int? BookId { get; set; }
-        
     }
 }

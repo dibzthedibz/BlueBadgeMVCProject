@@ -74,6 +74,10 @@
     <Compile Include="Migrations\202106291517156_NationObjectAddedAndToIdentityModelsAsWell.Designer.cs">
       <DependentUpon>202106291517156_NationObjectAddedAndToIdentityModelsAsWell.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106291803306_TookRequiredAnnotationFromBookIdInChapter.cs" />
+    <Compile Include="Migrations\202106291803306_TookRequiredAnnotationFromBookIdInChapter.Designer.cs">
+      <DependentUpon>202106291803306_TookRequiredAnnotationFromBookIdInChapter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106291517156_NationObjectAddedAndToIdentityModelsAsWell.resx">
       <DependentUpon>202106291517156_NationObjectAddedAndToIdentityModelsAsWell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106291803306_TookRequiredAnnotationFromBookIdInChapter.resx">
+      <DependentUpon>202106291803306_TookRequiredAnnotationFromBookIdInChapter.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -22,11 +22,11 @@ namespace WOTMVC.WebMVC.Controllers
         public ActionResult Create()
         {
             //var service = CreateChapterService();
-            //var books = service.CreateBookList();
+            //var chapters = service.CreateChapterList();
             //var service1 = CreateCharacterService();
             //var chars = service1.CreateCharacterList();
             //ViewBag.CharacterId = new SelectList(chars, "CharacterId", "FirstName");
-            //ViewBag.BookId = new SelectList(books, "BookId", "Title");
+            //ViewBag.ChapterId = new SelectList(chapters, "ChapterId", "Title");
             return View();
         }
         // Post: Chapter/Create
@@ -45,6 +45,70 @@ namespace WOTMVC.WebMVC.Controllers
             }
             return View(model);
         }
+        public ActionResult Details(int id)
+        {
+            var svc = CreateChapterService();
+            var model = svc.GetChapterById(id);
+
+            return View(model);
+        }
+        
+        //Get: Chapter/Edit
+        public ActionResult Edit(int id)
+        {
+            var service = CreateChapterService();
+            var detail = service.GetChapterById(id);
+            var model = new ChapterEdit
+            {
+                ChapterId = detail.ChapterId,
+                ChapTitle = detail.ChapTitle,
+                PageCount = detail.PageCount
+            };
+            return View(model);
+        }
+        //Post: Chapter/Edit
+        [HttpPost, ActionName("Edit")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, ChapterEdit chapter)
+        {
+            if (!ModelState.IsValid)
+                return View(chapter);
+
+            //if (chapter.ChapterId != id)
+            //{
+            //    ModelState.AddModelError("", "Id Mismatch");
+            //    return View(chapter);
+            //}
+
+            var service = CreateChapterService();
+            if (service.UpdateChapter(chapter))
+            {
+                //TempData["SaveResult"] = "Chapter Successfully Updated.";
+                return RedirectToAction("Index");
+            }
+
+            return View(chapter);
+        }
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateChapterService();
+            var model = svc.GetChapterById(id);
+
+            return View(model);
+        }
+        //Post: Product/Delete/{id}
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateChapterService();
+
+            service.DeleteChapter(id);
+
+            //TempData["SaveResult"] = "Chapter Successfully Deleted";
+
+            return RedirectToAction("Index");
+        }
         public ChapterService CreateChapterService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
@@ -52,4 +116,6 @@ namespace WOTMVC.WebMVC.Controllers
             return service;
         }
     }
+
+    
 }
