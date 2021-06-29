@@ -89,6 +89,7 @@ namespace WOTMVC.WebMVC.Controllers
 
             return View(chapter);
         }
+        //Get: Chapter/Delete
         public ActionResult Delete(int id)
         {
             var svc = CreateChapterService();
@@ -99,7 +100,7 @@ namespace WOTMVC.WebMVC.Controllers
         //Post: Product/Delete/{id}
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeletePost(int id)
+        public ActionResult DeleteChap(int id)
         {
             var service = CreateChapterService();
 
