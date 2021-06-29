@@ -11,7 +11,6 @@ namespace WOTMVC.Models.CharacterMods
         public int CharacterId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string FullName { get; set; }
         public string Ability { get; set; }
     }
 }

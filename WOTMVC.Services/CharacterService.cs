@@ -76,7 +76,7 @@ namespace WOTMVC.Services
                         .Single(e => e.CharacterId == character.CharacterId && e.OwnerId == _userId);
                 entity.FirstName = character.FirstName;
                 entity.LastName = character.LastName;
-                entity.Ability = character.PageCount;
+                entity.Ability = character.Ability;
 
                 return ctx.SaveChanges() == 1;
             }
