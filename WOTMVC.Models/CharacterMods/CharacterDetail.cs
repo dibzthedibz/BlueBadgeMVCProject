@@ -12,14 +12,7 @@ namespace WOTMVC.Models.CharacterMods
         public int CharacterId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string FullName
-        {
-            get
-            {
-                return $"{FirstName} {LastName}";
-            }
 
-        }
         public string Ability { get; set; }
         public List<ChapterListItem> Chapters { get; set; }
     }

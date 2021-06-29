@@ -44,6 +44,72 @@ namespace WOTMVC.WebMVC.Controllers
             }
             return View(model);
         }
+        public ActionResult Details(int id)
+        {
+            var svc = CreateCharacterService();
+            var model = svc.GetCharacterById(id);
+
+            return View(model);
+        }
+
+        //Get: Character/Edit
+        public ActionResult Edit(int id)
+        {
+            var service = CreateCharacterService();
+            var detail = service.GetCharacterById(id);
+            var model = new CharacterEdit
+            {
+                CharacterId = detail.CharacterId,
+                FirstName = detail.FirstName,
+                LastName = detail.LastName,
+                Ability = detail.Ability
+            };
+            return View(model);
+        }
+        //Post: Character/Edit
+        [HttpPost, ActionName("Edit")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, CharacterEdit character)
+        {
+            if (!ModelState.IsValid)
+                return View(character);
+
+            //if (character.CharacterId != id)
+            //{
+            //    ModelState.AddModelError("", "Id Mismatch");
+            //    return View(character);
+            //}
+
+            var service = CreateCharacterService();
+            if (service.UpdateCharacter(character))
+            {
+                //TempData["SaveResult"] = "Character Successfully Updated.";
+                return RedirectToAction("Index");
+            }
+
+            return View(character);
+        }
+        //Get: Character/Delete
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateCharacterService();
+            var model = svc.GetCharacterById(id);
+
+            return View(model);
+        }
+        //Post: Product/Delete/{id}
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteChap(int id)
+        {
+            var service = CreateCharacterService();
+
+            service.DeleteCharacter(id);
+
+            //TempData["SaveResult"] = "Character Successfully Deleted";
+
+            return RedirectToAction("Index");
+        }
 
         public CharacterService CreateCharacterService()
         {

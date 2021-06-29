@@ -51,7 +51,49 @@ namespace WOTMVC.Services
                     );
                 return query.ToArray();
             }
+        }
+        public CharacterDetail GetCharacterById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Characters.Single(e => e.CharacterId == id && e.OwnerId == _userId);
+                return new CharacterDetail
+                {
+                    CharacterId = entity.CharacterId,
+                    FirstName = entity.FirstName,
+                    LastName = entity.LastName,
+                    Ability = entity.Ability
+                };
+            }
+        }
+        public bool UpdateCharacter(CharacterEdit character)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Characters
+                        .Single(e => e.CharacterId == character.CharacterId && e.OwnerId == _userId);
+                entity.FirstName = character.FirstName;
+                entity.LastName = character.LastName;
+                entity.Ability = character.PageCount;
 
+                return ctx.SaveChanges() == 1;
+            }
+        }
+        public bool DeleteCharacter(int characterId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Characters
+                        .Single(e => e.CharacterId == characterId && e.OwnerId == _userId);
+
+                ctx.Characters.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
         }
     }
 }
