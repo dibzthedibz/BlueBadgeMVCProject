@@ -26,7 +26,9 @@ namespace WOTMVC.Services
                 ChapNum = model.ChapNum,
                 ChapTitle = model.ChapTitle,
                 PageCount = model.PageCount,
-                BookId = model.BookId
+                BookId = model.BookId,
+                NationId = model.NationId,
+                CharacterId = model.CharacterId
         };
             
             using (var ctx = new ApplicationDbContext())
@@ -35,20 +37,8 @@ namespace WOTMVC.Services
                 return ctx.SaveChanges() == 1;
             };
         }
-        //Put this into your controller and create a special view for it. You can link it off the Edit Page, maybe we can make it a dropdown, i dont fucking know, I just want it to return Meaningful Information Damnit!n/
-        public bool AddChapterToBook(ChapterDetail chap)
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var entity =
-                    ctx.Chapters.Single(e => e.ChapterId == chap.ChapterId);
-                entity.BookId = chap.Book.BookId;
+        
 
-                ctx.Chapters.Add(entity);
-                return ctx.SaveChanges() == 1;
-            }
-
-        }
         public IEnumerable<ChapterListItem> GetChaps()
         {
             using (var ctx = new ApplicationDbContext())
@@ -76,7 +66,10 @@ namespace WOTMVC.Services
                     ChapterId = entity.ChapterId,
                     ChapNum = entity.ChapNum,
                     ChapTitle = entity.ChapTitle,
-                    PageCount = entity.PageCount
+                    PageCount = entity.PageCount,
+                    BookIn = entity.Book.Title,
+                    Narrator = entity.Character.FirstName,
+                    Location = entity.Nation.NationName
                 };
             }
         }

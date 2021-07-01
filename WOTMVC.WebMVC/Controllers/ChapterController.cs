@@ -10,6 +10,7 @@ using WOTMVC.Services;
 
 namespace WOTMVC.WebMVC.Controllers
 {
+    [Authorize]
     public class ChapterController : Controller
     {
         // GET: Chapter
@@ -19,16 +20,17 @@ namespace WOTMVC.WebMVC.Controllers
             var model = service.GetChaps();
             return View(model);
         }
+        //Get: Chapter/Create
         public ActionResult Create()
         {
-            //var service = CreateChapterService();
-            //var chapters = service.CreateChapterList();
-            //var service1 = CreateCharacterService();
-            //var chars = service1.CreateCharacterList();
-            //ViewBag.CharacterId = new SelectList(chars, "CharacterId", "FirstName");
-            //ViewBag.ChapterId = new SelectList(chapters, "ChapterId", "Title");
+            var service = CreateNationService();
+            var nations = service.GetNations();
+            var service1 = CreateCharacterService();
+            var chars = service1.GetCharacters();            
             var service2 = CreateBookService();
             var books = service2.GetBooks();
+            ViewBag.CharacterId = new SelectList(chars, "CharacterId", "FirstName");
+            ViewBag.NationId = new SelectList(nations, "NationId", "NationName");
             ViewBag.BookId = new SelectList(books, "BookId", "Title");
             return View();
         }
@@ -55,7 +57,7 @@ namespace WOTMVC.WebMVC.Controllers
 
             return View(model);
         }
-        
+
         //Get: Chapter/Edit
         public ActionResult Edit(int id)
         {
@@ -137,7 +139,19 @@ namespace WOTMVC.WebMVC.Controllers
             var service = new BookService(userId);
             return service;
         }
+        public CharacterService CreateCharacterService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new CharacterService(userId);
+            return service;
+        }
+        public NationService CreateNationService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new NationService(userId);
+            return service;
+        }
     }
 
-    
+
 }

@@ -102,6 +102,10 @@
     <Compile Include="Migrations\202107011853018_AddedBookInStringToChapter.Designer.cs">
       <DependentUpon>202107011853018_AddedBookInStringToChapter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107012023579_AddedThreeVStringsToChapterObject.cs" />
+    <Compile Include="Migrations\202107012023579_AddedThreeVStringsToChapterObject.Designer.cs">
+      <DependentUpon>202107012023579_AddedThreeVStringsToChapterObject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -143,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107011853018_AddedBookInStringToChapter.resx">
       <DependentUpon>202107011853018_AddedBookInStringToChapter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107012023579_AddedThreeVStringsToChapterObject.resx">
+      <DependentUpon>202107012023579_AddedThreeVStringsToChapterObject.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

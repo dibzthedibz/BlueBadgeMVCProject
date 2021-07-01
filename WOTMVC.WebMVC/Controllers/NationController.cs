@@ -26,31 +26,31 @@
 //            return View();
 //        }
 //        //// Post: Nation/Create
-//        //[HttpPost, ActionName("Create")]
-//        //[ValidateAntiForgeryToken]
-//        //public ActionResult Create(NationCreate model)
-//        //{
-//        //    if (!ModelState.IsValid)
-//        //    {
-//        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-//        //    };
-//        //    var userId = Guid.Parse(User.Identity.GetUserId());
-//        //    var service = new NationService(userId);
+//        [HttpPost, ActionName("Create")]
+//        [ValidateAntiForgeryToken]
+//        public ActionResult Create(NationCreate model)
+//        {
+//            if (!ModelState.IsValid)
+//            {
+//                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+//            };
+//            var userId = Guid.Parse(User.Identity.GetUserId());
+//            var service = new NationService(userId);
 
-//        //    if (service.CreateNation(model))
-//        //    {
-//        //        return RedirectToAction("Index");
-//        //    }
-//        //    return View(model);
-//        //}
+//            if (service.CreateNation(model))
+//            {
+//                return RedirectToAction("Index");
+//            }
+//            return View(model);
+//        }
 
-//        //public NationService CreateNationService()
-//        //{
-//        //    var userId = Guid.Parse(User.Identity.GetUserId());
-//        //    var service = new NationService(userId);
-//        //    return service;
-//        //}
-//        //Get: Nation/Details/{id
+//        public NationService CreateNationService()
+//        {
+//            var userId = Guid.Parse(User.Identity.GetUserId());
+//            var service = new NationService(userId);
+//            return service;
+//        }
+//        Get: Nation/Details/{id
 //        public ActionResult Details(int id)
 //        {
 //            var svc = CreateNationService();

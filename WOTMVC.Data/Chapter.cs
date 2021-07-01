@@ -33,12 +33,13 @@ namespace WOTMVC.Data
 
         public int? CharacterId { get; set; }
         [ForeignKey(nameof(CharacterId))]
-        public virtual Character Narrator { get; set; }
+        public virtual Character Character { get; set; }
 
         public int? NationId { get; set; }
         [ForeignKey(nameof(NationId))]
-        public virtual Nation  Location { get; set; }
+        public virtual Nation  Nation { get; set; }
 
-
+        public virtual string Narrator { get; set; }
+        public virtual string Location { get; set; }
     }
 }

@@ -15,7 +15,7 @@ namespace WOTMVC.Models.BookMods
         public string Title { get; set; }
         public int PageCount { get; set; }
         public virtual List<ChapterListItem> Chapters { get; set; }
-    //    public virtual List<NationListItem> Nations { get; set; }
-    //    public virtual List<CharacterListItem> Characters { get; set; }
+        //public virtual List<NationListItem> Nations { get; set; }
+        //    public virtual List<CharacterListItem> Characters { get; set; }
     }
 }

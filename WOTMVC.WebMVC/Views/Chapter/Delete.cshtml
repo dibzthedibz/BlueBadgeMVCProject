@@ -1,0 +1,74 @@
+﻿@model WOTMVC.Models.ChapterMods.ChapterDetail
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<div>
+    <h4>ChapterDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ChapterId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChapterId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChapNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChapNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChapTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChapTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PageCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PageCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BookIn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookIn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Narrator)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Narrator)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
