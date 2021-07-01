@@ -46,7 +46,6 @@ namespace WOTMVC.Services
                             CharacterId = e.CharacterId,
                             FirstName = e.FirstName,
                             LastName = e.LastName,
-                            Ability = e.Ability,
                         }
                     );
                 return query.ToArray();

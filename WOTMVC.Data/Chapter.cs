@@ -29,5 +29,15 @@ namespace WOTMVC.Data
 
         [ForeignKey(nameof(BookId))]
         public virtual Book Book { get; set; }
+
+        public int? CharacterId { get; set; }
+        [ForeignKey(nameof(CharacterId))]
+        public virtual Character Narrator { get; set; }
+
+        public int? NationId { get; set; }
+        [ForeignKey(nameof(NationId))]
+        public virtual Nation  Location { get; set; }
+
+
     }
 }

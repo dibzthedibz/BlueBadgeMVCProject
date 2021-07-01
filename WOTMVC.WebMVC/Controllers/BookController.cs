@@ -44,13 +44,13 @@ namespace WOTMVC.WebMVC.Controllers
             }
             return View(model);
         }
-        public ActionResult Details(int id)
-        {
-            var svc = CreateBookService();
-            var model = svc.GetBookById(id);
+        //public ActionResult Details(int id)
+        //{
+        //    var svc = CreateBookService();
+        //    var model = svc.GetBookById(id);
 
-            return View(model);
-        }
+        //    return View(model);
+        //}
         public BookService CreateBookService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
@@ -58,18 +58,18 @@ namespace WOTMVC.WebMVC.Controllers
             return service;
         }
         //Get: Book/Edit
-        public ActionResult Edit(int id)
-        {
-            var service = CreateBookService();
-            var detail = service.GetBookById(id);
-            var model = new BookEdit
-            {
-                BookId = detail.BookId,
-                Title = detail.Title,
-                PageCount = detail.PageCount
-            };
-            return View(model);
-        }
+        //public ActionResult Edit(int id)
+        //{
+        //    var service = CreateBookService();
+        //    var detail = service.GetBookById(id);
+        //    var model = new BookEdit
+        //    {
+        //        BookId = detail.BookId,
+        //        Title = detail.Title,
+        //        PageCount = detail.PageCount
+        //    };
+        //    return View(model);
+        //}
         //Post: Book/Edit
         [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
@@ -93,13 +93,13 @@ namespace WOTMVC.WebMVC.Controllers
 
             return View(book);
         }
-        public ActionResult Delete(int id)
-        {
-            var svc = CreateBookService();
-            var model = svc.GetBookById(id);
+        //public ActionResult Delete(int id)
+        //{
+        //    var svc = CreateBookService();
+        //    //var model = svc.GetBookById(id);
 
-            return View(model);
-        }
+        //    return View(model);
+        //}
         //Post: Product/Delete/{id}
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

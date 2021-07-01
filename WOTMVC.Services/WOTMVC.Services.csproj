@@ -57,7 +57,6 @@
     <Compile Include="BookService.cs" />
     <Compile Include="ChapterService.cs" />
     <Compile Include="CharacterService.cs" />
-    <Compile Include="NationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

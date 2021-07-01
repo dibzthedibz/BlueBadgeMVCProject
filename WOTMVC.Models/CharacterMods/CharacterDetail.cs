@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WOTMVC.Data;
 using WOTMVC.Models.ChapterMods;
 
 namespace WOTMVC.Models.CharacterMods
@@ -15,5 +16,6 @@ namespace WOTMVC.Models.CharacterMods
 
         public string Ability { get; set; }
         public List<ChapterListItem> Chapters { get; set; }
+        public virtual Nation Birthplace { get; set; }
     }
 }

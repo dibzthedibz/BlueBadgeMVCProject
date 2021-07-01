@@ -10,10 +10,7 @@ namespace WOTMVC.Models.NationMods
     public class NationListItem
     {
         public int NationId { get; set; }
-        [Display(Name = "Name Of Nation")]
+        [Display(Name = "Nation")]
         public string NationName { get; set; }
-        [Display(Name = "Environmental Conditions")]
-        public string Terrain { get; set; }
-        public string Trades { get; set; }
     }
 }

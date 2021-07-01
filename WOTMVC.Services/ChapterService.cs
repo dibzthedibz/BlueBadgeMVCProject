@@ -44,7 +44,6 @@ namespace WOTMVC.Services
                             ChapterId = e.ChapterId,
                             ChapNum = e.ChapNum,
                             ChapTitle = e.ChapTitle,
-                            PageCount = e.PageCount
                         }
                     );
                 return query.ToArray();

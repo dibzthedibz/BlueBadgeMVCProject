@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WOTMVC.Data;
 
 namespace WOTMVC.Models.NationMods
 {
@@ -15,5 +16,8 @@ namespace WOTMVC.Models.NationMods
         [Display(Name = "Environmental Conditions")]
         public string Terrain { get; set; }
         public string Trades { get; set; }
+        public virtual List<Chapter> Chapters { get; set; }
+        public virtual List<Character> Characters { get; set; }
+
     }
 }

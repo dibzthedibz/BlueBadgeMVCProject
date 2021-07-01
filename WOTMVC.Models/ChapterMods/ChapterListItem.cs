@@ -10,14 +10,11 @@ namespace WOTMVC.Models.ChapterMods
     public class ChapterListItem
     {
         public int ChapterId { get; set; }
-        
+
         [Display(Name = "Chapter Number")]
         public int ChapNum { get; set; }
 
         [Display(Name = "Title of Chapter")]
         public string ChapTitle { get; set; }
-
-        [Display(Name ="Length of Chapter")]
-        public int PageCount { get; set; }
     }
 }

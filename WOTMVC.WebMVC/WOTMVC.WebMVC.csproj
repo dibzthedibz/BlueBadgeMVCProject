@@ -240,24 +240,6 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Book\Index.cshtml" />
     <Content Include="Views\Book\Create.cshtml" />
-    <Content Include="Views\Chapter\Index.cshtml" />
-    <Content Include="Views\Character\Index.cshtml" />
-    <Content Include="Views\Character\Create.cshtml" />
-    <Content Include="Views\Nation\Create.cshtml" />
-    <Content Include="Views\Nation\Index.cshtml" />
-    <Content Include="Views\Book\Details.cshtml" />
-    <Content Include="Views\Book\Edit.cshtml" />
-    <Content Include="Views\Book\Delete.cshtml" />
-    <Content Include="Views\Chapter\Edit.cshtml" />
-    <Content Include="Views\Chapter\Details.cshtml" />
-    <Content Include="Views\Chapter\Create.cshtml" />
-    <Content Include="Views\Chapter\Delete.cshtml" />
-    <Content Include="Views\Character\Details.cshtml" />
-    <Content Include="Views\Character\Edit.cshtml" />
-    <Content Include="Views\Character\Delete.cshtml" />
-    <Content Include="Views\Nation\Details.cshtml" />
-    <Content Include="Views\Nation\Edit.cshtml" />
-    <Content Include="Views\Nation\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

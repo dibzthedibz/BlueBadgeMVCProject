@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace WOTMVC.Data
@@ -16,5 +17,9 @@ namespace WOTMVC.Data
 
         [Required]
         public int PageCount { get; set; }
+
+        public virtual List<Chapter> Chapters { get; set; }
+        public virtual List<Nation> Nations { get; set; }
+        public virtual List<Character> Characters { get; set; }
     }
 }

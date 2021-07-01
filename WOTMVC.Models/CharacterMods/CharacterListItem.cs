@@ -19,6 +19,5 @@ namespace WOTMVC.Models.CharacterMods
             }
 
         }
-        public string Ability { get; set; }
     }
 }

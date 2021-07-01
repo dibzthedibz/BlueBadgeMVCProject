@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using WOTMVC.Data;
 using WOTMVC.Models.BookMods;
+using WOTMVC.Models.ChapterMods;
+using WOTMVC.Models.NationMods;
 
 namespace WOTMVC.Services
 {
@@ -40,25 +42,38 @@ namespace WOTMVC.Services
                         {
                             BookId = e.BookId,
                             Title = e.Title,
-                            PageCount = e.PageCount
                         }
                     );
                 return query.ToArray();
             }
         }
-        public BookDetail GetBookById(int id)
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var entity = ctx.Books.Single(e => e.BookId == id && e.OwnerId == _userId);
-                return new BookDetail
-                {
-                    BookId = entity.BookId,
-                    Title = entity.Title,
-                    PageCount = entity.PageCount
-                };
-            }
-        }
+        //public BookDetail GetBookById(int id)
+        //{
+        //    using (var ctx = new ApplicationDbContext())
+        //    {
+        //        var entity = ctx.Books.Single(e => e.BookId == id && e.OwnerId == _userId);
+        //        return new BookDetail
+        //        {
+        //            BookId = entity.BookId,
+        //            Title = entity.Title,
+        //            PageCount = entity.PageCount,
+        //            Chapters = entity.Chapters
+        //            .Select(e => new ChapterListItem()
+        //            {
+        //                ChapterId = e.ChapterId,
+        //                ChapNum = e.ChapNum,
+        //                ChapTitle = e.ChapTitle
+
+        //            }).ToList(),
+        //            Nations = entity.Nations
+        //            .Select(e => new NationListItem()
+        //            {
+
+        //            }
+        //            )
+        //        };
+        //    }
+        //}
         public bool UpdateBook(BookEdit book)
         {
             using (var ctx = new ApplicationDbContext())

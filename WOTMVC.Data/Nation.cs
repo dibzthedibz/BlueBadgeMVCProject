@@ -22,5 +22,9 @@ namespace WOTMVC.Data
         public string Terrain { get; set; }
         
         public string Trades { get; set; }
+
+        public virtual List<Character> Characters { get; set; }
+        public virtual List<Chapter> Chapters { get; set; }
+
     }
 }
