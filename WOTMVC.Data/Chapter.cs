@@ -24,7 +24,8 @@ namespace WOTMVC.Data
 
         [Required]
         public int PageCount { get; set; }
-
+        public string BookIn { get; set; }
+        
         public int? BookId { get; set; }
 
         [ForeignKey(nameof(BookId))]

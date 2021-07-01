@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WOTMVC.Data;
+using WOTMVC.Models.BookMods;
 using WOTMVC.Models.ChapterMods;
 
 namespace WOTMVC.Services
@@ -25,12 +26,28 @@ namespace WOTMVC.Services
                 ChapNum = model.ChapNum,
                 ChapTitle = model.ChapTitle,
                 PageCount = model.PageCount,
-            };
+                BookId = model.BookId
+        };
+            
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Chapters.Add(entity);
                 return ctx.SaveChanges() == 1;
+            };
+        }
+        //Put this into your controller and create a special view for it. You can link it off the Edit Page, maybe we can make it a dropdown, i dont fucking know, I just want it to return Meaningful Information Damnit!n/
+        public bool AddChapterToBook(ChapterDetail chap)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx.Chapters.Single(e => e.ChapterId == chap.ChapterId);
+                entity.BookId = chap.Book.BookId;
+
+                ctx.Chapters.Add(entity);
+                return ctx.SaveChanges() == 1;
             }
+
         }
         public IEnumerable<ChapterListItem> GetChaps()
         {
@@ -74,6 +91,9 @@ namespace WOTMVC.Services
                 entity.ChapNum = chapter.ChapNum;
                 entity.ChapTitle = chapter.ChapTitle;
                 entity.PageCount = chapter.PageCount;
+                entity.BookId = chapter.BookId;
+                entity.CharacterId = chapter.CharacterId;
+                entity.NationId = chapter.NationId;
 
                 return ctx.SaveChanges() == 1;
             }

@@ -13,6 +13,7 @@ namespace WOTMVC.Models.ChapterMods
         public int ChapNum { get; set; }
         public string ChapTitle { get; set; }
         public int PageCount { get; set; }
+        public virtual Book Book { get; set; }
         public virtual Character Narrator { get; set; }
         public virtual Nation Location { get; set; }
     }

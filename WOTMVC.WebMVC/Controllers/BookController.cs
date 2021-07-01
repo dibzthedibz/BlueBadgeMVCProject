@@ -44,13 +44,13 @@ namespace WOTMVC.WebMVC.Controllers
             }
             return View(model);
         }
-        //public ActionResult Details(int id)
-        //{
-        //    var svc = CreateBookService();
-        //    var model = svc.GetBookById(id);
+        public ActionResult Details(int id)
+        {
+            var svc = CreateBookService();
+            var model = svc.GetBookById(id);
 
-        //    return View(model);
-        //}
+            return View(model);
+        }
         public BookService CreateBookService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

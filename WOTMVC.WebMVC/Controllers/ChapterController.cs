@@ -27,6 +27,9 @@ namespace WOTMVC.WebMVC.Controllers
             //var chars = service1.CreateCharacterList();
             //ViewBag.CharacterId = new SelectList(chars, "CharacterId", "FirstName");
             //ViewBag.ChapterId = new SelectList(chapters, "ChapterId", "Title");
+            var service2 = CreateBookService();
+            var books = service2.GetBooks();
+            ViewBag.BookId = new SelectList(books, "BookId", "Title");
             return View();
         }
         // Post: Chapter/Create
@@ -89,6 +92,18 @@ namespace WOTMVC.WebMVC.Controllers
 
             return View(chapter);
         }
+        // Post: Chapter/AddBook
+        public ActionResult AddBook(int id)
+        {
+            var service = CreateChapterService();
+            var detail = service.GetChapterById(id);
+            var model = new ChapterDetail
+            {
+                ChapterId = detail.ChapterId,
+                ChapTitle = detail.ChapTitle,
+            };
+            return View(model);
+        }
         //Get: Chapter/Delete
         public ActionResult Delete(int id)
         {
@@ -114,6 +129,12 @@ namespace WOTMVC.WebMVC.Controllers
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new ChapterService(userId);
+            return service;
+        }
+        public BookService CreateBookService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new BookService(userId);
             return service;
         }
     }

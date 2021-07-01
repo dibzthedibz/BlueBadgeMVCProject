@@ -4,6 +4,7 @@ using System.Linq;
 using WOTMVC.Data;
 using WOTMVC.Models.BookMods;
 using WOTMVC.Models.ChapterMods;
+using WOTMVC.Models.CharacterMods;
 using WOTMVC.Models.NationMods;
 
 namespace WOTMVC.Services
@@ -47,33 +48,38 @@ namespace WOTMVC.Services
                 return query.ToArray();
             }
         }
-        //public BookDetail GetBookById(int id)
-        //{
-        //    using (var ctx = new ApplicationDbContext())
-        //    {
-        //        var entity = ctx.Books.Single(e => e.BookId == id && e.OwnerId == _userId);
-        //        return new BookDetail
-        //        {
-        //            BookId = entity.BookId,
-        //            Title = entity.Title,
-        //            PageCount = entity.PageCount,
-        //            Chapters = entity.Chapters
-        //            .Select(e => new ChapterListItem()
-        //            {
-        //                ChapterId = e.ChapterId,
-        //                ChapNum = e.ChapNum,
-        //                ChapTitle = e.ChapTitle
+        public BookDetail GetBookById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Books.Single(e => e.BookId == id && e.OwnerId == _userId);
+                return new BookDetail
+                {
+                    BookId = entity.BookId,
+                    Title = entity.Title,
+                    PageCount = entity.PageCount,
+                    Chapters = entity.Chapters
+                    .Select(e => new ChapterListItem()
+                    {
+                        ChapNum = e.ChapNum,
+                        ChapTitle = e.ChapTitle
 
-        //            }).ToList(),
-        //            Nations = entity.Nations
-        //            .Select(e => new NationListItem()
-        //            {
-
-        //            }
-        //            )
-        //        };
-        //    }
-        //}
+                    }).ToList(),
+                    //Nations = entity.Nations
+                    //.Select(e => new NationListItem()
+                    //{
+                    //    NationName = e.NationName
+                    //}
+                    //).ToList(),
+                    //Characters = entity.Characters
+                    //.Select(e => new CharacterListItem()
+                    //{
+                    //    FirstName = e.FirstName,
+                    //    LastName = e.LastName
+                    //}).ToList()
+                };
+            }
+        }
         public bool UpdateBook(BookEdit book)
         {
             using (var ctx = new ApplicationDbContext())
@@ -103,5 +109,8 @@ namespace WOTMVC.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
     }
 }
+
+

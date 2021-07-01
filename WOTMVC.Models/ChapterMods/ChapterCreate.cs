@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WOTMVC.Data;
 
 namespace WOTMVC.Models.ChapterMods
 {
@@ -18,5 +19,7 @@ namespace WOTMVC.Models.ChapterMods
 
         [Display(Name = "Length of Chapter")]
         public int PageCount { get; set; }
+        public int BookId { get; set; }
+
     }
 }
