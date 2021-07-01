@@ -57,6 +57,7 @@
     <Compile Include="Book.cs" />
     <Compile Include="Chapter.cs" />
     <Compile Include="Character.cs" />
+    <Compile Include="DisplayTable.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\202106291324038_FirstObjectBook.cs" />
     <Compile Include="Migrations\202106291324038_FirstObjectBook.Designer.cs">

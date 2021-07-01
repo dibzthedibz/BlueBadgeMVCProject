@@ -20,6 +20,9 @@ namespace WOTMVC.Data
         public int ChapNum { get; set; }
 
         [Required]
+        public string ChapName { get; set; }
+
+        [Required]
         public string ChapTitle { get; set; }
 
         [Required]
