@@ -90,6 +90,14 @@
     <Compile Include="Migrations\202107011500358_AddedTwoListsToBook.Designer.cs">
       <DependentUpon>202107011500358_AddedTwoListsToBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107011509068_GitMergeIssuesRequiresNewMigration.cs" />
+    <Compile Include="Migrations\202107011509068_GitMergeIssuesRequiresNewMigration.Designer.cs">
+      <DependentUpon>202107011509068_GitMergeIssuesRequiresNewMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107011511078_ChapNameMergedIntoDataObject.cs" />
+    <Compile Include="Migrations\202107011511078_ChapNameMergedIntoDataObject.Designer.cs">
+      <DependentUpon>202107011511078_ChapNameMergedIntoDataObject.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -122,6 +130,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107011500358_AddedTwoListsToBook.resx">
       <DependentUpon>202107011500358_AddedTwoListsToBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107011509068_GitMergeIssuesRequiresNewMigration.resx">
+      <DependentUpon>202107011509068_GitMergeIssuesRequiresNewMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107011511078_ChapNameMergedIntoDataObject.resx">
+      <DependentUpon>202107011511078_ChapNameMergedIntoDataObject.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
