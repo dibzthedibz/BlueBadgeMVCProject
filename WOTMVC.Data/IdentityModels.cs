@@ -36,6 +36,7 @@ namespace WOTMVC.Data
         public DbSet<Chapter> Chapters { get; set; }
         public DbSet<Character> Characters { get; set; }
         public DbSet<Nation> Nations { get; set; }
+        public DbSet<DisplayTable> Displays { get; set; }
 
 
 

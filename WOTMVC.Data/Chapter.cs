@@ -20,14 +20,16 @@ namespace WOTMVC.Data
         public int ChapNum { get; set; }
 
         [Required]
+        public string ChapName { get; set; }
+
+        [Required]
         public string ChapTitle { get; set; }
 
         [Required]
         public int PageCount { get; set; }
 
-        public int? BookId { get; set; }
-
-        [ForeignKey(nameof(BookId))]
-        public virtual Book Book { get; set; }
+        public virtual string Narrator { get; set; }
+        public virtual string Location { get; set; }
+        public virtual string BookIn { get; set; }
     }
 }

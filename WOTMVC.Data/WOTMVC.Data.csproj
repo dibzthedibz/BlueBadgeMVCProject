@@ -57,6 +57,7 @@
     <Compile Include="Book.cs" />
     <Compile Include="Chapter.cs" />
     <Compile Include="Character.cs" />
+    <Compile Include="DisplayTable.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\202106291324038_FirstObjectBook.cs" />
     <Compile Include="Migrations\202106291324038_FirstObjectBook.Designer.cs">
@@ -77,6 +78,14 @@
     <Compile Include="Migrations\202106291803306_TookRequiredAnnotationFromBookIdInChapter.cs" />
     <Compile Include="Migrations\202106291803306_TookRequiredAnnotationFromBookIdInChapter.Designer.cs">
       <DependentUpon>202106291803306_TookRequiredAnnotationFromBookIdInChapter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106301755301_RevertedGitVersion.cs" />
+    <Compile Include="Migrations\202106301755301_RevertedGitVersion.Designer.cs">
+      <DependentUpon>202106301755301_RevertedGitVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107011232309_AddDisplayTableToJoin.cs" />
+    <Compile Include="Migrations\202107011232309_AddDisplayTableToJoin.Designer.cs">
+      <DependentUpon>202107011232309_AddDisplayTableToJoin.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nation.cs" />
@@ -101,6 +110,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106291803306_TookRequiredAnnotationFromBookIdInChapter.resx">
       <DependentUpon>202106291803306_TookRequiredAnnotationFromBookIdInChapter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106301755301_RevertedGitVersion.resx">
+      <DependentUpon>202106301755301_RevertedGitVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107011232309_AddDisplayTableToJoin.resx">
+      <DependentUpon>202107011232309_AddDisplayTableToJoin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
