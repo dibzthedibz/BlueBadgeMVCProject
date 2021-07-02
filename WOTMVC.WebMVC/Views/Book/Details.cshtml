@@ -28,7 +28,8 @@
             @Html.DisplayNameFor(model => model.Chapters)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Chapters)
+            @Html.LabelFor(model => model.Chapters)
+            @Html.DropDownList(model => model.Chapters.Title, Model.Title)
         </dd>
         
 

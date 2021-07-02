@@ -46,6 +46,10 @@ namespace WOTMVC.WebMVC.Controllers
         }
         public ActionResult Details(int id)
         {
+            var svc1 = CreateChapterService();
+            var chaps = svc1.GetChaps();
+            ViewBag.Chapters = new SelectList(chaps, "Chapters", "ChapTitle");
+
             var svc = CreateBookService();
             var model = svc.GetBookById(id);
 
@@ -58,18 +62,19 @@ namespace WOTMVC.WebMVC.Controllers
             return service;
         }
         //Get: Book/Edit
-        //public ActionResult Edit(int id)
-        //{
-        //    var service = CreateBookService();
-        //    var detail = service.GetBookById(id);
-        //    var model = new BookEdit
-        //    {
-        //        BookId = detail.BookId,
-        //        Title = detail.Title,
-        //        PageCount = detail.PageCount
-        //    };
-        //    return View(model);
-        //}
+        public ActionResult Edit(int id)
+        {
+            var service = CreateBookService();
+            var detail = service.GetBookById(id);
+            var model = new BookEdit
+            {
+                BookId = detail.BookId,
+                Title = detail.Title,
+                PageCount = detail.PageCount,
+                Chapters = detail.Chapters
+            };
+            return View(model);
+        }
         //Post: Book/Edit
         [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
@@ -112,6 +117,12 @@ namespace WOTMVC.WebMVC.Controllers
             //TempData["SaveResult"] = "Book Successfully Deleted";
 
             return RedirectToAction("Index");
+        }
+        public ChapterService CreateChapterService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new ChapterService(userId);
+            return service;
         }
     }
 }

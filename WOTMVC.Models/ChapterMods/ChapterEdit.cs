@@ -19,8 +19,12 @@ namespace WOTMVC.Models.ChapterMods
 
         [Display(Name = "Length of Chapter")]
         public int PageCount { get; set; }
+        public virtual string BookIn { get; set; }
+        public virtual string Narrator { get; set; }
+        public virtual string Location { get; set; }
         public int? BookId { get; set; }
         public int? NationId { get; set; }
         public int? CharacterId { get; set; }
+
     }
 }

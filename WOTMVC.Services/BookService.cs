@@ -64,22 +64,11 @@ namespace WOTMVC.Services
                         ChapNum = e.ChapNum,
                         ChapTitle = e.ChapTitle
 
-                    }).ToList(),
-                    //Nations = entity.Nations
-                    //.Select(e => new NationListItem()
-                    //{
-                    //    NationName = e.NationName
-                    //}
-                    //).ToList(),
-                    //Characters = entity.Characters
-                    //.Select(e => new CharacterListItem()
-                    //{
-                    //    FirstName = e.FirstName,
-                    //    LastName = e.LastName
-                    //}).ToList()
+                    }).ToList()
                 };
             }
         }
+        
         public bool UpdateBook(BookEdit book)
         {
             using (var ctx = new ApplicationDbContext())

@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using WOTMVC.Models.ChapterMods;
 
 namespace WOTMVC.Models.BookMods
 {
@@ -11,6 +8,6 @@ namespace WOTMVC.Models.BookMods
         public int BookId { get; set; }
         public string Title { get; set; }
         public int PageCount { get; set; }
-
+        public virtual List<ChapterListItem> Chapters { get; set; }
     }
 }

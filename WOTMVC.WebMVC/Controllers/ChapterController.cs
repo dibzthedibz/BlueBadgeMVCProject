@@ -25,13 +25,17 @@ namespace WOTMVC.WebMVC.Controllers
         {
             var service = CreateNationService();
             var nations = service.GetNations();
+
             var service1 = CreateCharacterService();
-            var chars = service1.GetCharacters();            
+            var chars = service1.GetCharacters();
+            
             var service2 = CreateBookService();
             var books = service2.GetBooks();
+
             ViewBag.CharacterId = new SelectList(chars, "CharacterId", "FirstName");
             ViewBag.NationId = new SelectList(nations, "NationId", "NationName");
             ViewBag.BookId = new SelectList(books, "BookId", "Title");
+
             return View();
         }
         // Post: Chapter/Create
@@ -61,13 +65,29 @@ namespace WOTMVC.WebMVC.Controllers
         //Get: Chapter/Edit
         public ActionResult Edit(int id)
         {
+            var service1 = CreateNationService();
+            var nations = service1.GetNations();
+            ViewBag.NationId = new SelectList(nations, "NationId", "NationName");
+
+            var service2 = CreateCharacterService();
+            var chars = service2.GetCharacters();
+            ViewBag.CharacterId = new SelectList(chars, "CharacterId", "FirstName");
+
+            var service3 = CreateBookService();
+            var books = service3.GetBooks();
+            ViewBag.BookId = new SelectList(books, "BookId", "Title");
+
             var service = CreateChapterService();
             var detail = service.GetChapterById(id);
             var model = new ChapterEdit
             {
                 ChapterId = detail.ChapterId,
+                ChapNum = detail.ChapNum,
                 ChapTitle = detail.ChapTitle,
-                PageCount = detail.PageCount
+                PageCount = detail.PageCount,
+                BookIn = detail.BookIn,
+                Location = detail.Location,
+                Narrator = detail.Narrator
             };
             return View(model);
         }
@@ -94,18 +114,7 @@ namespace WOTMVC.WebMVC.Controllers
 
             return View(chapter);
         }
-        // Post: Chapter/AddBook
-        public ActionResult AddBook(int id)
-        {
-            var service = CreateChapterService();
-            var detail = service.GetChapterById(id);
-            var model = new ChapterDetail
-            {
-                ChapterId = detail.ChapterId,
-                ChapTitle = detail.ChapTitle,
-            };
-            return View(model);
-        }
+        
         //Get: Chapter/Delete
         public ActionResult Delete(int id)
         {
