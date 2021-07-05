@@ -12,5 +12,7 @@ namespace WOTMVC.Models.CharacterMods
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Ability { get; set; }
+        public virtual string Birthplace { get; set; }
+        public int? NationId { get; set; }
     }
 }

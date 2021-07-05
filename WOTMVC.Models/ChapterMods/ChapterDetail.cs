@@ -16,5 +16,6 @@ namespace WOTMVC.Models.ChapterMods
         public virtual string BookIn { get; set; }
         public virtual string Narrator { get; set; }
         public virtual string Location { get; set; }
+        public int BookId { get; set; }
     }
 }

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<WOTMVC.Models.NationMods.NationListItem>
+
+@{
+    ViewBag.Title = "Nations";
+}
+
+<h2>List Of Nations</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NationId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NationName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NationId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NationName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.NationId}) |
+            @Html.ActionLink("Details", "Details", new { id = item.NationId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.NationId })
+        </td>
+    </tr>
+}
+
+</table>

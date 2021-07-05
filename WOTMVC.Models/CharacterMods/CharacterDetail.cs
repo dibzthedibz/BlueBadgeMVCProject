@@ -16,6 +16,7 @@ namespace WOTMVC.Models.CharacterMods
 
         public string Ability { get; set; }
         public List<ChapterListItem> Chapters { get; set; }
-        public virtual Nation Birthplace { get; set; }
+        public virtual string Birthplace { get; set; }
+        public int NationId { get; set; }
     }
 }

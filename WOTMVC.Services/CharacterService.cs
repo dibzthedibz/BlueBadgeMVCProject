@@ -25,7 +25,8 @@ namespace WOTMVC.Services
                 OwnerId = _userId,
                 FirstName = model.FirstName,
                 LastName = model.LastName,
-                Ability = model.Ability
+                Ability = model.Ability,
+                NationId = model.NationId
             };
             using (var ctx = new ApplicationDbContext())
             {
@@ -61,7 +62,8 @@ namespace WOTMVC.Services
                     CharacterId = entity.CharacterId,
                     FirstName = entity.FirstName,
                     LastName = entity.LastName,
-                    Ability = entity.Ability
+                    Ability = entity.Ability,
+                    Birthplace = entity.Birthplace.NationName
                 };
             }
         }
@@ -76,6 +78,7 @@ namespace WOTMVC.Services
                 entity.FirstName = character.FirstName;
                 entity.LastName = character.LastName;
                 entity.Ability = character.Ability;
+                entity.NationId = character.NationId;
 
                 return ctx.SaveChanges() == 1;
             }
@@ -84,6 +87,12 @@ namespace WOTMVC.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
+                var entity1 =
+                ctx
+                    .Chapters
+                    .Single(e => e.CharacterId == characterId && e.OwnerId == _userId);
+                ctx.Chapters.Remove(entity1);
+
                 var entity =
                     ctx
                         .Characters

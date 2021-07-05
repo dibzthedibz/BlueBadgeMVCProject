@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WOTMVC.Data;
+using WOTMVC.Models.CharacterMods;
 
 namespace WOTMVC.Models.NationMods
 {
@@ -13,11 +10,10 @@ namespace WOTMVC.Models.NationMods
         public int NationId { get; set; }
         [Display(Name = "Name Of Nation")]
         public string NationName { get; set; }
-        [Display(Name = "Environmental Conditions")]
         public string Terrain { get; set; }
         public string Trades { get; set; }
         public virtual List<Chapter> Chapters { get; set; }
-        public virtual List<Character> Characters { get; set; }
+        public virtual List<CharacterListItem> Characters { get; set; }
 
     }
 }

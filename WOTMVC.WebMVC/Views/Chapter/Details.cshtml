@@ -47,7 +47,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.BookIn)
+            @Html.ActionLink(Model.BookIn, "Details", "Book", new { id = Model.BookId }, null)
         </dd>
 
         <dt>
@@ -69,6 +69,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id= Model.ChapterId }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ChapterId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

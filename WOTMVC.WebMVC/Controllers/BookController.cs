@@ -98,13 +98,13 @@ namespace WOTMVC.WebMVC.Controllers
 
             return View(book);
         }
-        //public ActionResult Delete(int id)
-        //{
-        //    var svc = CreateBookService();
-        //    //var model = svc.GetBookById(id);
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateBookService();
+            var model = svc.GetBookById(id);
 
-        //    return View(model);
-        //}
+            return View(model);
+        }
         //Post: Product/Delete/{id}
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

@@ -48,27 +48,39 @@ namespace WOTMVC.Services
                 return query.ToArray();
             }
         }
+        public IEnumerable<ChapterListItem> GetChapsByBook(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = ctx.Chapters.Where(e => e.BookId == id)
+                    .Select(
+                        e =>
+                        new ChapterListItem
+                        {
+                            ChapterId = e.ChapterId,
+                            ChapTitle = e.ChapTitle,
+                        }
+                    );
+                return query.ToArray();
+            }
+        }
         public BookDetail GetBookById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx.Books.Single(e => e.BookId == id && e.OwnerId == _userId);
+
+                var chapList = GetChapsByBook(id).ToList();
                 return new BookDetail
                 {
                     BookId = entity.BookId,
                     Title = entity.Title,
                     PageCount = entity.PageCount,
-                    Chapters = entity.Chapters
-                    .Select(e => new ChapterListItem()
-                    {
-                        ChapNum = e.ChapNum,
-                        ChapTitle = e.ChapTitle
-
-                    }).ToList()
+                    Chapters = chapList
                 };
             }
         }
-        
+
         public bool UpdateBook(BookEdit book)
         {
             using (var ctx = new ApplicationDbContext())
@@ -88,10 +100,16 @@ namespace WOTMVC.Services
         {
             using (var ctx = new ApplicationDbContext())
             {
+                var entity1 =
+                ctx
+                    .Chapters
+                    .Single(e => e.BookId == bookId && e.OwnerId == _userId);
+                ctx.Chapters.Remove(entity1);
+
                 var entity =
                     ctx
-                        .Books
-                        .Single(e => e.BookId == bookId && e.OwnerId == _userId);
+                    .Books
+                    .Single(e => e.BookId == bookId && e.OwnerId == _userId);
 
                 ctx.Books.Remove(entity);
 

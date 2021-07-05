@@ -23,6 +23,9 @@ namespace WOTMVC.WebMVC.Controllers
         // Get: Character/Create
         public ActionResult Create()
         {
+            var service1 = CreateNationService();
+            var nations = service1.GetNations();
+            ViewBag.NationId = new SelectList(nations, "NationId", "NationName");
             return View();
         }
 
@@ -55,6 +58,10 @@ namespace WOTMVC.WebMVC.Controllers
         //Get: Character/Edit
         public ActionResult Edit(int id)
         {
+            var service1 = CreateNationService();
+            var nations = service1.GetNations();
+            ViewBag.NationId = new SelectList(nations, "NationId", "NationName");
+
             var service = CreateCharacterService();
             var detail = service.GetCharacterById(id);
             var model = new CharacterEdit
@@ -62,7 +69,8 @@ namespace WOTMVC.WebMVC.Controllers
                 CharacterId = detail.CharacterId,
                 FirstName = detail.FirstName,
                 LastName = detail.LastName,
-                Ability = detail.Ability
+                Ability = detail.Ability,
+                Birthplace = detail.Birthplace
             };
             return View(model);
         }
@@ -115,6 +123,13 @@ namespace WOTMVC.WebMVC.Controllers
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new CharacterService(userId);
+            return service;
+        }
+
+        public NationService CreateNationService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new NationService(userId);
             return service;
         }
     }

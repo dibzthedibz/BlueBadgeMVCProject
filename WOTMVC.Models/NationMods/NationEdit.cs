@@ -12,7 +12,6 @@ namespace WOTMVC.Models.NationMods
         public int NationId { get; set; }
         [Display(Name = "Name Of Nation")]
         public string NationName { get; set; }
-        [Display(Name = "Environmental Conditions")]
         public string Terrain { get; set; }
         public string Trades { get; set; }
     }

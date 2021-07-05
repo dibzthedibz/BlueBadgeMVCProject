@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WOTMVC.Data;
 using WOTMVC.Models.ChapterMods;
 using WOTMVC.Models.CharacterMods;
 using WOTMVC.Models.NationMods;
@@ -17,5 +18,7 @@ namespace WOTMVC.Models.BookMods
         public virtual List<ChapterListItem> Chapters { get; set; }
         //public virtual List<NationListItem> Nations { get; set; }
         //    public virtual List<CharacterListItem> Characters { get; set; }
+
+        public virtual Chapter Chapter { get; set; }
     }
 }

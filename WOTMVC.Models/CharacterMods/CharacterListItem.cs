@@ -11,13 +11,11 @@ namespace WOTMVC.Models.CharacterMods
         public int CharacterId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string FullName
-        {
-            get
+        public string FullName {
+            get 
             {
-                return $"{FirstName} {LastName}";
-            }
-
+                return FirstName + LastName;
+            } 
         }
     }
 }
