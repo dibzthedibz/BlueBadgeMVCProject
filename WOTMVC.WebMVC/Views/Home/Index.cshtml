@@ -11,14 +11,94 @@
     <title>Dibz</title>
 </head>
 <body>
+
     <div class="container-fluid">
-        <div class="row" id="bg">
-            <img src="~/assets/aes_sedai.jpg" id="bgimg" />
-            <div class="caption">
+        <div class="row padding">
+            <div class=" col-12 caption">
                 <h1 class="display-2">Wheel of Time</h1>
+                <hr />
                 <h3>A Quick Reference Guide</h3>
             </div>
         </div>
     </div>
+    <div id="slides" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <li data-target="#slides" data-slide-to="0" class="active"></li>
+            <li data-target="#slides" data-slide-to="1"></li>
+            <li data-target="#slides" data-slide-to="2"></li>
+        </ul>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/assets/books1.jpg">
+                <div class="carousel-caption">
+                    <h5 class="display-4">Search By Book Title</h5>
+                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="~/assets/mat1.jpg">
+                <div class="carousel-caption">
+                    <h5>Search By Character</h5>
+                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="~/assets/map.jpg">
+                <div class="carousel-caption">
+                    <h5>Search by Nation</h5>
+                    <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    @*<div class="row padding">
+            <div class="col-lg-12">
+                <div class="card" id="books">
+                    <img src="~/assets/books1.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Search By Book Title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />*@
+    <!--<div class="row padding">
+        <div class="col-lg-12">
+            <div class="card">
+                <img src="~/assets/mat1.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Search By Character</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    @*</div>*@
+    <!--</div>
+    <hr />
+    <div class="row padding">
+        <div class="col-lg-12">
+            <div class="card">
+                <img src="~/assets/map.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Search by Nation</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <hr />
+    </div>
+    <div class="row padding text-center">
+
+    </div>
+    </div>-->
 </body>
 </html>

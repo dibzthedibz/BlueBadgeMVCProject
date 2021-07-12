@@ -6,8 +6,13 @@ body {
     width: 100%;
     font-family: 'Poppins' sans-serif;
     color: #222;
-/*    min-width: fit-content;
-    background-color: slategrey;*/
+    min-width: fit-content;
+    /*background-color: slategrey;*/
+    background-image: url(/assets/aes_sedai.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    enable-background: inherit;
 }
 
     body::-webkit-scrollbar {
@@ -34,32 +39,104 @@ body {
 /*--navbar styling e--*/
 .caption {
     position: absolute;
-    top: 50%;
-    left: 30%;
+    top: 150px;
+    left: 0;
     margin: 0 auto;
 }
+
     .caption h1 {
+        font-family: 'CormorantUnicase-Regular';
         font-size: 1500%;
         text-transform: uppercase;
-        text-shadow: 3px 3px 7px white;
+        text-shadow: 15px 15px 10px black;
+        text-align: center;
+        color: white;
     }
-    .caption h3 {
-        font-size: 800%;
+
+@font-face {
+    font-family: 'CormorantUnicase-Regular';
+    src: url('../fonts/CormorantUnicase-Regular.ttf') format('truetype');
+}
+
+.caption h3 {
+    font-family: 'Trebuchet MS';
+    font-size: 500%;
+    text-transform: uppercase;
+    text-shadow: 15px 15px 10px black;
+    text-align: center;
+    color: white;
+}
+.carousel-inner {
+    position: absolute;
+}
+.carousel-item img {
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    position: relative;
+    width: 500px;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 60%;
+    transform: translateY(-70%);
+}
+
+    .carousel-caption h1 {
+        font-size: 500%;
         text-transform: uppercase;
-        text-shadow: 3px 3px 7px white;
+        text-shadow: 3px 3px 7px red;
     }
-#bg{
-    position: relative;
-    align-content: center;
+
+    .carousel-caption h3 {
+        font-size: 200%;
+        font-weight: 700;
+        text-shadow: 5px 5px 5px #000;
+        margin-bottom: 45px;
+    }
+
+.carousel-item {
+    padding-bottom: 35px;
 }
-#bgimg{
-    position: relative;
-    width: 100%;
+
+.btn-outline-dark {
+    background-color: lightseagreen;
+    border: 1px outset lightseagreen;
 }
 
+    .btn-outline-dark:hover {
+        background-color: teal;
+        border: 1px inset teal;
+    }
 
+.btn-primary {
+    background-color: #6648b1;
+    border: 1px outset #6648b1;
+}
 
+    .btn-primary:hover {
+        background-color: #563d7c;
+        border: 1px inset #563d7c;
+    }
 
+.card {
+    top: 250px;
+    left: 0;
+    margin: 0 auto;
+    margin-top: 250px;
+    width: 750px;
+    position: absolute;
+}
+
+.card-body {
+    text-align: center;
+    background-color: transparent;
+}
+
+#books {
+    transform: scale(75%);
+}
 
 
 
@@ -91,7 +168,7 @@ body {
 .carousel-caption {
     position: absolute;
     bottom: 50%;*/
-    /*transform: translateY(-50%)*/
+/*transform: translateY(-50%)*/
 /*}
 
     .carousel-caption h1 {
@@ -128,8 +205,8 @@ body {
     }
 
     .welcome h1 {*/
-        /*font-size: 24px;*/
-        /*font-weight: 600;
+/*font-size: 24px;*/
+/*font-weight: 600;
     }
 
     .welcome hr {
@@ -137,17 +214,17 @@ body {
         width: 95%;
         margin: 25px 0 25px 0;
         padding-top: 55px;
-    }
+    }*/
 
 .padding {
     padding-bottom: 2rem;
     padding-top: 2rem;
 }
 
-.img-responsive {
+/*.img-responsive {
     margin: 400px 0 100px 0;*/
-    /*position: relative;*/
-    /*width: 100%;
+/*position: relative;*/
+/*width: 100%;
 }
 
 #main {
