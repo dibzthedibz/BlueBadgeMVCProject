@@ -183,10 +183,23 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\books.jpg" />
+    <Content Include="assets\books1.jpg" />
+    <Content Include="assets\egwene.jpg" />
+    <Content Include="assets\guys.jpg" />
+    <Content Include="assets\map.jpg" />
+    <Content Include="assets\mat.jpg" />
+    <Content Include="assets\mat1.jpg" />
+    <Content Include="assets\nynaeve.jpg" />
+    <Content Include="assets\nynaeve1.jpg" />
+    <Content Include="assets\perrin.jpg" />
+    <Content Include="assets\perrin1.jpg" />
+    <Content Include="assets\rand.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\main.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -199,11 +212,14 @@
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.maphilight.js" />
+    <Content Include="Scripts\jquery.maphilight.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="assets\aes_sedai.jpg" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -217,7 +233,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -258,6 +273,7 @@
     <Content Include="Views\Nation\Create.cshtml" />
     <Content Include="Views\Nation\Edit.cshtml" />
     <Content Include="Views\Nation\Delete.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

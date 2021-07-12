@@ -76,7 +76,13 @@ namespace WOTMVC.Services
                     BookId = entity.BookId,
                     Title = entity.Title,
                     PageCount = entity.PageCount,
-                    Chapters = chapList
+                    Chapters = entity.Chapters
+                    .Select(e => new ChapterListItem()
+                    {
+                        ChapterId = e.ChapterId,
+                        ChapNum = e.ChapNum,
+                        ChapTitle = e.ChapTitle
+                    }).ToList()
                 };
             }
         }

@@ -47,7 +47,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Birthplace)
+            @Html.ActionLink(Model.Birthplace, "Details", "Nation", new { id = Model.NationId }, null)
         </dd>
     </dl>
 </div>

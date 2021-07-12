@@ -1,12 +1,18 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+/*    padding-top: 50px;
+    padding-bottom: 20px;*/
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 0 0 0;
+    padding:0;
+    width: 100%;
+    position: relative;
+    transform:translateY(-10%);
+
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -22,3 +28,4 @@ select,
 textarea {
     max-width: 280px;
 }
+

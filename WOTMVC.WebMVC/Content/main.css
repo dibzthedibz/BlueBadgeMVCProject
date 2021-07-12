@@ -1,0 +1,172 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+
+body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins' sans-serif;
+    color: #222;
+/*    min-width: fit-content;
+    background-color: slategrey;*/
+}
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+/*--navbar styling--*/
+.navbar {
+    /*padding: .8rem;*/
+    height: 15px;
+    position: fixed;
+    width: 100%;
+    border-radius: 0px;
+    margin: 0 auto;
+}
+
+.navbar-nav li {
+    padding: 20px;
+}
+
+.nav-link {
+    font-size: 1.1em !important;
+}
+/*--navbar styling e--*/
+.caption {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    margin: 0 auto;
+}
+    .caption h1 {
+        font-size: 1500%;
+        text-transform: uppercase;
+        text-shadow: 3px 3px 7px white;
+    }
+    .caption h3 {
+        font-size: 800%;
+        text-transform: uppercase;
+        text-shadow: 3px 3px 7px white;
+    }
+#bg{
+    position: relative;
+    align-content: center;
+}
+#bgimg{
+    position: relative;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*area{
+    opacity: 1;
+}
+#Saldea:hover{
+    opacity: 0;
+}
+
+#slides{
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    transform: scale(55%);
+}
+
+.carousel-inner img {
+    width: 80%;
+    height: 100%;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 50%;*/
+    /*transform: translateY(-50%)*/
+/*}
+
+    .carousel-caption h1 {
+        font-size: 700%;
+        text-transform: uppercase;
+        text-shadow: 1px 1px 20px black;
+    }
+
+    .carousel-caption h3 {
+        font-size: 200%;
+        font-weight: 700;
+        text-shadow: 1px 1px 15px #000;
+    }
+
+.btn-primary {
+    background-color: #6648b1;
+    border: 1px solid #6648b1;
+}
+
+    .btn-primary:hover {
+        background-color: #563d7c;
+        border: 1px solid #563d7c;
+    }
+
+
+.welcome {
+    width: 100%;
+    padding-top: 25px;
+    margin: 0 0 100px 45px;
+}
+
+    .welcome p {
+        font-weight: 500;
+    }
+
+    .welcome h1 {*/
+        /*font-size: 24px;*/
+        /*font-weight: 600;
+    }
+
+    .welcome hr {
+        border-top: 2px solid #b4b4b4;
+        width: 95%;
+        margin: 25px 0 25px 0;
+        padding-top: 55px;
+    }
+
+.padding {
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
+
+.img-responsive {
+    margin: 400px 0 100px 0;*/
+    /*position: relative;*/
+    /*width: 100%;
+}
+
+#main {
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    height:fit-content;
+}
+
+.card-body {
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+
+.carousel-item {
+    transition: -webkit-transform 0.5s ease;
+    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible;
+}*/
