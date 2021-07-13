@@ -43,6 +43,7 @@ namespace WOTMVC.Services
                         {
                             BookId = e.BookId,
                             Title = e.Title,
+                            Image = e.Image
                         }
                     );
                 return query.ToArray();
@@ -76,6 +77,7 @@ namespace WOTMVC.Services
                     BookId = entity.BookId,
                     Title = entity.Title,
                     PageCount = entity.PageCount,
+                    Image = entity.Image,
                     Chapters = entity.Chapters
                     .Select(e => new ChapterListItem()
                     {
@@ -98,6 +100,7 @@ namespace WOTMVC.Services
                 entity.Title = book.Title;
                 entity.Title = book.Title;
                 entity.PageCount = book.PageCount;
+                entity.Image = book.Image;
 
                 return ctx.SaveChanges() == 1;
             }

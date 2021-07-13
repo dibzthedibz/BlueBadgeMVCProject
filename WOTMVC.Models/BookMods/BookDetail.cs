@@ -18,6 +18,7 @@ namespace WOTMVC.Models.BookMods
         public virtual List<ChapterListItem> Chapters { get; set; }
         //public virtual List<NationListItem> Nations { get; set; }
         //    public virtual List<CharacterListItem> Characters { get; set; }
+        public string Image { get; set; }
 
         public virtual Chapter Chapter { get; set; }
     }

@@ -1,7 +1,7 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
 
 
-body {
+html, body {
     height: 100%;
     width: 100%;
     font-family: 'Poppins' sans-serif;
@@ -39,7 +39,7 @@ body {
 /*--navbar styling e--*/
 .caption {
     position: absolute;
-    top: 150px;
+    top: 0;
     left: 0;
     margin: 0 auto;
 }
@@ -58,6 +58,11 @@ body {
     src: url('../fonts/CormorantUnicase-Regular.ttf') format('truetype');
 }
 
+.container {
+    transform: translateY(100px);
+    margin: 0 auto;
+}
+
 .caption h3 {
     font-family: 'Trebuchet MS';
     font-size: 500%;
@@ -66,27 +71,38 @@ body {
     text-align: center;
     color: white;
 }
-.carousel-inner {
-    position: absolute;
-}
-.carousel-item img {
-    top: 0;
-    left: 0;
-    margin: 0 auto;
-    position: relative;
-    width: 500px;
+
+.carousel-indicators {
+    /*position: absolute;*/
+    transform: translateX(125px);
+    /*transform: translateY(50px);*/
 }
 
+.carousel{
+    min-width: 1600px;
+    min-height:1241px;
+}
+
+.carousel-inner{
+    /*transform: translateY(150px);*/
+    margin: 0 auto;
+}
+
+/*#repobox{
+    margin: 0 0 600px 0;
+}*/
 .carousel-caption {
     position: absolute;
-    top: 60%;
+    bottom: 50%;
     transform: translateY(-70%);
+    transform: scale(75%);
 }
 
     .carousel-caption h1 {
         font-size: 500%;
+        font-weight: 700;
         text-transform: uppercase;
-        text-shadow: 3px 3px 7px red;
+        text-shadow: 13px 13px 17px black;
     }
 
     .carousel-caption h3 {
@@ -96,9 +112,11 @@ body {
         margin-bottom: 45px;
     }
 
-.carousel-item {
+/*.carousel-item, .carousel-item active {
+    position: absolute;
     padding-bottom: 35px;
-}
+
+}*/
 
 .btn-outline-dark {
     background-color: lightseagreen;
@@ -120,23 +138,8 @@ body {
         border: 1px inset #563d7c;
     }
 
-.card {
-    top: 250px;
-    left: 0;
-    margin: 0 auto;
-    margin-top: 250px;
-    width: 750px;
-    position: absolute;
-}
 
-.card-body {
-    text-align: center;
-    background-color: transparent;
-}
 
-#books {
-    transform: scale(75%);
-}
 
 
 
@@ -151,25 +154,25 @@ body {
 }
 #Saldea:hover{
     opacity: 0;
-}
+}*/
 
-#slides{
+#slides {
     top: 0;
     left: 0;
     margin: 0 auto;
     transform: scale(55%);
 }
 
-.carousel-inner img {
+/*.carousel-inner img {
     width: 80%;
     height: 100%;
-}
+}*/
 
-.carousel-caption {
+/*.carousel-caption {
     position: absolute;
-    bottom: 50%;*/
-/*transform: translateY(-50%)*/
-/*}
+    bottom: 50%;
+    transform: translateY(-50%)
+}
 
     .carousel-caption h1 {
         font-size: 700%;
@@ -181,9 +184,9 @@ body {
         font-size: 200%;
         font-weight: 700;
         text-shadow: 1px 1px 15px #000;
-    }
+    }*/
 
-.btn-primary {
+/*.btn-primary {
     background-color: #6648b1;
     border: 1px solid #6648b1;
 }
@@ -191,22 +194,22 @@ body {
     .btn-primary:hover {
         background-color: #563d7c;
         border: 1px solid #563d7c;
-    }
+    }*/
 
 
-.welcome {
+/*.welcome {
     width: 100%;
     padding-top: 25px;
     margin: 0 0 100px 45px;
-}
+}*/
 
-    .welcome p {
+/*.welcome p {
         font-weight: 500;
     }
 
-    .welcome h1 {*/
-/*font-size: 24px;*/
-/*font-weight: 600;
+    .welcome h1 {
+font-size: 24px;
+font-weight: 600;
     }
 
     .welcome hr {
@@ -237,7 +240,7 @@ body {
 .card-body {
     margin-bottom: 15px;
     padding: 0;
-}
+}*/
 
 
 .carousel-item {
@@ -246,4 +249,4 @@ body {
     transition: transform 0.5s ease, -webkit-transform 0.5s ease;
     -webkit-backface-visibility: visible;
     backface-visibility: visible;
-}*/
+}

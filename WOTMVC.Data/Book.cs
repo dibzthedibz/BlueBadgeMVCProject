@@ -17,6 +17,7 @@ namespace WOTMVC.Data
 
         [Required]
         public int PageCount { get; set; }
+        public string Image { get; set; }
 
         public virtual List<Chapter> Chapters { get; set; }
         public virtual List<Nation> Nations { get; set; }

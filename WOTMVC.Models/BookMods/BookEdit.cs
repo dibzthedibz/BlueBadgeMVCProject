@@ -9,5 +9,6 @@ namespace WOTMVC.Models.BookMods
         public string Title { get; set; }
         public int PageCount { get; set; }
         public virtual List<ChapterListItem> Chapters { get; set; }
+        public string Image { get; set; }
     }
 }

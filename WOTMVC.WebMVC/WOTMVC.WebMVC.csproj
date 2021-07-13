@@ -183,6 +183,21 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\book1.jpg" />
+    <Content Include="assets\book10.jpg" />
+    <Content Include="assets\book11.jpg" />
+    <Content Include="assets\book12.jpg" />
+    <Content Include="assets\book13.jpg" />
+    <Content Include="assets\book14.jpg" />
+    <Content Include="assets\book15.jpg" />
+    <Content Include="assets\book2.jpg" />
+    <Content Include="assets\book3.jpg" />
+    <Content Include="assets\book4.jpg" />
+    <Content Include="assets\book5.jpg" />
+    <Content Include="assets\book6.jpg" />
+    <Content Include="assets\book7.jpg" />
+    <Content Include="assets\book8.jpg" />
+    <Content Include="assets\book9.jpeg" />
     <Content Include="assets\books.jpg" />
     <Content Include="assets\books1.jpg" />
     <Content Include="assets\egwene.jpg" />
@@ -199,7 +214,9 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\details.css" />
     <Content Include="Content\main.css" />
+    <Content Include="Content\objIndex.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -259,13 +276,11 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Book\Index.cshtml" />
-    <Content Include="Views\Book\Create.cshtml" />
     <Content Include="Views\Chapter\Index.cshtml" />
     <Content Include="Views\Chapter\Create.cshtml" />
     <Content Include="Views\Chapter\Details.cshtml" />
     <Content Include="Views\Chapter\Delete.cshtml" />
     <Content Include="Views\Chapter\Edit.cshtml" />
-    <Content Include="Views\Book\Edit.cshtml" />
     <Content Include="Views\Book\Details.cshtml" />
     <Content Include="Views\Book\Delete.cshtml" />
     <Content Include="Views\Character\Index.cshtml" />
@@ -279,6 +294,8 @@
     <Content Include="Views\Nation\Edit.cshtml" />
     <Content Include="Views\Nation\Delete.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Book\Create.cshtml" />
+    <Content Include="Views\Book\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
