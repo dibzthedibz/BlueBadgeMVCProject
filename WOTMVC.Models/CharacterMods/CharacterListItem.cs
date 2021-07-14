@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WOTMVC.Data;
+using WOTMVC.Models.ChapterMods;
 
 namespace WOTMVC.Models.CharacterMods
 {
@@ -15,7 +16,7 @@ namespace WOTMVC.Models.CharacterMods
         public string FullName {
             get 
             {
-                return FirstName + LastName;
+                return FirstName + " " + LastName;
             } 
         }
         public string Ability { get; set; }

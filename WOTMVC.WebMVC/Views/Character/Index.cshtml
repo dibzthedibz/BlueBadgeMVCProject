@@ -16,10 +16,10 @@
 </head>
 <body>
     <div class="container-fluid padding">
-        <div class="row welcome text-center">
-            <div class="col-lg-12 caption">
+        <div class="row welcome1 text-center">
+            <div class="col-xs-3 col-sm-6 col-md-12 col-lg-12 caption1" style="margin-top:100px">
                 <h1 class="display-2">Wheel of Time</h1>
-                <h3 class="display-2">Characters</h3>
+                <h3 class="display-2" style="color: white">Characters</h3>
             </div>
         </div>
     </div>
@@ -28,8 +28,8 @@
         <div class="row text-center padding">
             @foreach (var item in Model)
             {
-                <div class="col-xs-12 col-sm-6 col-md-4 d-flex justify-content-around">
-                    <div class="flip-card">
+                <div class="col-xs-4 col-sm-12 col-md-4 " style="margin-bottom: 350px">
+                    <div class="flip-card" style="position: relative" id="charflip">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
                                 <img src="@Url.Content(item.Image)" id="bookimg"/>
@@ -38,7 +38,7 @@
                                 <h1>@Html.DisplayFor(model => item.FullName)</h1>
                                 <p>Ability: @Html.DisplayFor(model => item.Ability)</p>
                                 <p>Home State: @Html.DisplayFor(model => item.Birthplace)</p>
-
+                                
                             </div>
                         </div>
                     </div>

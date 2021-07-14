@@ -14,5 +14,6 @@ namespace WOTMVC.Models.CharacterMods
         public string Ability { get; set; }
         public int NationId { get; set; }
         public List<ChapterListItem> Chapters { get; set; }
+        public string Image { get; set; }
     }
 }

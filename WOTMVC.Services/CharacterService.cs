@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WOTMVC.Data;
+using WOTMVC.Models.ChapterMods;
 using WOTMVC.Models.CharacterMods;
 
 namespace WOTMVC.Services
@@ -26,7 +27,8 @@ namespace WOTMVC.Services
                 FirstName = model.FirstName,
                 LastName = model.LastName,
                 Ability = model.Ability,
-                NationId = model.NationId
+                NationId = model.NationId,
+                Image = model.Image
             };
             using (var ctx = new ApplicationDbContext())
             {
@@ -49,7 +51,8 @@ namespace WOTMVC.Services
                             LastName = e.LastName,
                             Ability = e.Ability,
                             Birthplace = e.Birthplace.NationName,
-                            Image = e.Image
+                            Image = e.Image,
+                            Chapters = e.Chapters
                         }
                     );
                 return query.ToArray();
