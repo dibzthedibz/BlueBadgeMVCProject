@@ -43,15 +43,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Birthplace)
+            @Html.DisplayNameFor(model => model.NationId)
         </dt>
 
         <dd>
-            @Html.ActionLink(Model.Birthplace, "Details", "Nation", new { id = Model.NationId }, null)
+            <ul>
+                <li> @Html.ActionLink(Model.Birthplace.NationName, "Details", "Nation", new { id = Model.NationId }, null)</li>
+            </ul>
+           
         </dd>
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CharacterId}) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CharacterId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

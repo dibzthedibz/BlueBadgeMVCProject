@@ -110,6 +110,14 @@
     <Compile Include="Migrations\202107131955124_AddedImagePropToBookObj.Designer.cs">
       <DependentUpon>202107131955124_AddedImagePropToBookObj.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107132148139_StringToNation.cs" />
+    <Compile Include="Migrations\202107132148139_StringToNation.Designer.cs">
+      <DependentUpon>202107132148139_StringToNation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107140349164_AddedImageToCharacter.cs" />
+    <Compile Include="Migrations\202107140349164_AddedImageToCharacter.Designer.cs">
+      <DependentUpon>202107140349164_AddedImageToCharacter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -157,6 +165,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107131955124_AddedImagePropToBookObj.resx">
       <DependentUpon>202107131955124_AddedImagePropToBookObj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107132148139_StringToNation.resx">
+      <DependentUpon>202107132148139_StringToNation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107140349164_AddedImageToCharacter.resx">
+      <DependentUpon>202107140349164_AddedImageToCharacter.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

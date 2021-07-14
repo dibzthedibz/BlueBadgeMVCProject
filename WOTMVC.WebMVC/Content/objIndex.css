@@ -10,7 +10,6 @@
     background-size: cover;
     background-attachment: fixed;
     enable-background: inherit;
-
 }
 
 .welcome {
@@ -19,6 +18,11 @@
     left: 0;
     margin: 0 auto;
     padding-top: 250px;
+}
+
+.caption {
+    padding-top: 150px;
+    margin-bottom: 350px;
 }
 
     .caption h1 {
@@ -30,14 +34,82 @@
         color: white;
     }
 
+.caption1 {
+    padding-top: 150px;
+    margin-bottom: 150px;
+}
+
+    .caption1 h1 {
+        font-family: 'CormorantUnicase-Regular';
+        font-size: 1500%;
+        text-transform: uppercase;
+        text-shadow: 15px 15px 10px black;
+        text-align: center;
+        color: burlywood;
+    }
+
 @font-face {
     font-family: 'CormorantUnicase-Regular';
     src: url('../fonts/CormorantUnicase-Regular.ttf') format('truetype');
 }
-#bookbox{
-    height:400px;
-    width: 400px;
+
+#bookbox {
+    /*    height:400px;
+    width: 400px;*/
     position: relative;
-    padding: 250px;
-    margin: 0 25px 0 25px;
+    top: 0;
+    left: 100px;
+    margin: 0 auto
+}
+
+#bookimg {
+    max-width: 400px;
+    padding-top: 35px;
+    margin: 0 250px 175px 0;
+    border: 13px inset solid black;
+    opacity: 1;
+}
+
+    #bookimg:hover {
+        opacity: .8;
+        border: 3px outset solid grey;
+    }
+
+#detimg {
+    max-width: 400px;
+}
+
+.flip-card {
+    padding-top: 35px;
+    margin: 0 250px 175px 0;
+    background-color: transparent;
+    width: 400px;
+    height: 400px;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(-180deg);
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+.flip-card-front {
+    color: black;
+}
+.flip-card-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
 }

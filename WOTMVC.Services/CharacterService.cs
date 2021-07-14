@@ -47,6 +47,9 @@ namespace WOTMVC.Services
                             CharacterId = e.CharacterId,
                             FirstName = e.FirstName,
                             LastName = e.LastName,
+                            Ability = e.Ability,
+                            Birthplace = e.Birthplace.NationName,
+                            Image = e.Image
                         }
                     );
                 return query.ToArray();
@@ -63,7 +66,8 @@ namespace WOTMVC.Services
                     FirstName = entity.FirstName,
                     LastName = entity.LastName,
                     Ability = entity.Ability,
-                    Birthplace = entity.Birthplace.NationName
+                    NationId = entity.NationId,
+                    Image = entity.Image
                 };
             }
         }
@@ -79,6 +83,7 @@ namespace WOTMVC.Services
                 entity.LastName = character.LastName;
                 entity.Ability = character.Ability;
                 entity.NationId = character.NationId;
+                entity.Image = character.Image;
 
                 return ctx.SaveChanges() == 1;
             }

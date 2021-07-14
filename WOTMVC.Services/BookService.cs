@@ -43,7 +43,8 @@ namespace WOTMVC.Services
                         {
                             BookId = e.BookId,
                             Title = e.Title,
-                            Image = e.Image
+                            Image = e.Image,
+                            PageCount = e.PageCount
                         }
                     );
                 return query.ToArray();
@@ -59,6 +60,7 @@ namespace WOTMVC.Services
                         new ChapterListItem
                         {
                             ChapterId = e.ChapterId,
+                            ChapNum = e.ChapNum,
                             ChapTitle = e.ChapTitle,
                         }
                     );

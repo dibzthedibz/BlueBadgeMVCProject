@@ -16,6 +16,10 @@ namespace WOTMVC.WebMVC.Controllers
         // GET: Book
         public ActionResult Index()
         {
+            var svc1 = CreateChapterService();
+            var chaps = svc1.GetChaps();
+            ViewBag.Chapters = new SelectList(chaps, "Chapters", "ChapTitle");
+
             var service = CreateBookService();
             var model = service.GetBooks();
             return View(model);

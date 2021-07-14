@@ -4,60 +4,95 @@
     ViewBag.Title = "Details";
 }
 <head>
-    <link rel="stylesheet" type="text/css" href="~/Content/Details.css">
+    <link rel="stylesheet" type="text/css" href="~/content/objindex.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    @*<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>*@
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
-<h2>Details</h2>
-
-<div>
-    <h4>BookDetail</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.BookId)
-        </dt>
-
+<body>
+    <dl class="text-center">
         <dd>
-            @Html.DisplayFor(model => model.BookId)
+            <div class="container padding" style="transform: translateY(-150px)">
+                <div class="row welcome">
+                    <div class="col-lg-12 caption1">
+                        <h1 class="display-2">@Html.DisplayFor(model => model.Title)</h1>
+                    </div>
+                </div>
+            </div>
         </dd>
+        
+        @*<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <ul>
+                                @foreach (var item in Model.Chapters)
+                                {
+                                    <li>
+                                        @Html.ActionLink(item.ChapTitle, "Details", "Chapter", new { id = item.ChapterId }, null)
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Understood</button>
+                        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
+                    </div>
+                </div>
+            </div>*@
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PageCount)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PageCount)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Chapters)
-
-        </dt>
-        <dd>
-            <ul>
-                @foreach (var item in Model.Chapters)
-                {
-                    <li>
-                        @Html.ActionLink(item.ChapTitle, "Details", "Chapter", new { id = item.ChapterId}, null)
-                    </li>
-                }
-            </ul>
-        </dd>
+        </d>
     </dl>
+</body>
+@*<h2>Details</h2>
 
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.BookId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    <div>
+        <h4>BookDetail</h4>
+        <hr />
+        <dl class="dl-horizontal">
+
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PageCount)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PageCount)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Chapters)
+
+            </dt>
+            <dd>
+                <ul>
+                    @foreach (var item in Model.Chapters)
+                    {
+                        <li>
+                            @Html.ActionLink(item.ChapTitle, "Details", "Chapter", new { id = item.ChapterId}, null)
+                        </li>
+                    }
+                </ul>
+            </dd>
+        </dl>
+
+    </div>*@
+@*<p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.BookId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@

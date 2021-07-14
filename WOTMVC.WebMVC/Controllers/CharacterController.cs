@@ -26,6 +26,7 @@ namespace WOTMVC.WebMVC.Controllers
             var service1 = CreateNationService();
             var nations = service1.GetNations();
             ViewBag.NationId = new SelectList(nations, "NationId", "NationName");
+
             return View();
         }
 
@@ -70,7 +71,9 @@ namespace WOTMVC.WebMVC.Controllers
                 FirstName = detail.FirstName,
                 LastName = detail.LastName,
                 Ability = detail.Ability,
-                Birthplace = detail.Birthplace
+                Image = detail.Image,
+                NationId = detail.NationId
+                //Birthplace = detail.Birthplace
             };
             return View(model);
         }

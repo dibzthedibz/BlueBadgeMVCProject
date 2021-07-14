@@ -21,50 +21,83 @@
         </div>
     </div>
 
-    <div class="container-fluid padding"">
-        <div class="row text-center padding" id="bookbox">
+    <div class="container-fluid padding">
+        <div class="row text-center padding">
             @foreach (var item in Model)
             {
-                <div class="col-xs-12 col-sm-6 col-md-4" style="clear:both; float: left; width: 50%">
-                    <a href="@Url.Action("Details",  new { id = item.BookId })"><img src="@Url.Content(item.Image)"/></a>
+                <div class="col-xs-12 col-sm-6 col-md-4 d-flex justify-content-around">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <img src="@Url.Content(item.Image)" id="bookimg" />
+                            </div>
+                            <div class="flip-card-back">
+                                <h1>@Html.DisplayFor(model => item.Title)</h1>
+                                <p>@Html.DisplayFor(model => item.PageCount) Pages</p>
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Chapters
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             }
         </div>
     </div>
 
-    @*<div>
-            <table class="table-borderless padding d-flex justify-content-center text-center">
-                <thead></thead>
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div>
+        <table class="table-borderless padding d-flex justify-content-center text-center">
+            <thead></thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th></th>
+            </tr>
+
+
+            @foreach (var item in Model)
+            {
                 <tr>
-                    <th>
-                        @Html.DisplayNameFor(model => model.Title)
-                    </th>
-                    <th></th>
+                    <td>
+                        <div class="dropdown show center-block">
+                            <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div>@Html.DisplayFor(modelItem => item.Title)</div>
+                            </a>
+                            <hr />
+
+                            <div class="dropdown-menu text-center" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item">@Html.ActionLink("Edit", "Edit", new { id = item.BookId })</a>
+                                <a class="dropdown-item" href="#">@Html.ActionLink("Details", "Details", new { id = item.BookId })</a>
+                                <a class="dropdown-item" href="#">@Html.ActionLink("Delete", "Delete", new { id = item.BookId })</a>
+                            </div>
+                            <hr />
+                        </div>
+                    </td>
                 </tr>
 
+            }
 
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            <div class="dropdown show center-block">
-                                <a class="btn btn-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <div>@Html.DisplayFor(modelItem => item.Title)</div>
-                                </a>
-                                <hr />
-
-                                <div class="dropdown-menu text-center" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item">@Html.ActionLink("Edit", "Edit", new { id = item.BookId })</a>
-                                    <a class="dropdown-item" href="#">@Html.ActionLink("Details", "Details", new { id = item.BookId })</a>
-                                    <a class="dropdown-item" href="#">@Html.ActionLink("Delete", "Delete", new { id = item.BookId })</a>
-                                </div>
-                                <hr />
-                            </div>
-                        </td>
-                    </tr>
-
-                }
-
-            </table>
-        </div>*@
-</body>
+        </table>
+    </div>*@

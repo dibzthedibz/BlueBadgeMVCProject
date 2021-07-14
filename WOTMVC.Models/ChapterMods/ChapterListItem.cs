@@ -16,5 +16,6 @@ namespace WOTMVC.Models.ChapterMods
 
         [Display(Name = "Title of Chapter")]
         public string ChapTitle { get; set; }
+        public int PageCount { get; set; }
     }
 }

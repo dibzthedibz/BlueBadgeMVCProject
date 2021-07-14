@@ -19,6 +19,7 @@ namespace WOTMVC.Data
         [Required]
         public string LastName { get; set; }
         public string FullName { get; set; }
+        public string Image { get; set; }
 
         public string Ability { get; set; }
         public int? NationId { get; set; }
