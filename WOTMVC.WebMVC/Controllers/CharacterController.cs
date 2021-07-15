@@ -10,6 +10,7 @@ using WOTMVC.Services;
 
 namespace WOTMVC.WebMVC.Controllers
 {
+    [Authorize]
     public class CharacterController : Controller
     {
         // GET: Character
